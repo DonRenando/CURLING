@@ -1,0 +1,15 @@
+package modele;
+
+public class UseType {
+	
+	private String nomFichier;
+	
+	public UseType(String pNomFichier){
+		nomFichier= pNomFichier;
+	}
+	
+	public abstract Vector<String> mesUrl(){
+		;
+	}
+
+}

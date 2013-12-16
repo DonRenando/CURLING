@@ -1,5 +1,4 @@
-import controlleur.*;
-
+import controleur.*;
 
 public class principal {
 
@@ -8,5 +7,4 @@ public class principal {
 		CtrlAccueil monCtrl= new CtrlAccueil(); 
 		monCtrl.newDlgAccueil(monCtrl);
 	}
-
 }

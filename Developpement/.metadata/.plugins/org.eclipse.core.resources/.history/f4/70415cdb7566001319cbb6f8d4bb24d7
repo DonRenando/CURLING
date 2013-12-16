@@ -1,0 +1,9 @@
+package modele;
+
+import java.util.Vector;
+
+public interface UseInterface {
+	
+	public Vector<String> mesUrl();
+
+}

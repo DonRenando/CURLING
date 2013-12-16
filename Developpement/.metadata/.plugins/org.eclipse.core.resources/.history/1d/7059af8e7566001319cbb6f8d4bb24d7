@@ -1,0 +1,16 @@
+package modele;
+
+import java.util.Vector;
+
+public class UseDocx {
+	
+	public UseDocx(String pNomFichier) {
+		super(pNomFichier);
+	}
+
+	public Vector<String> mesUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -21,3 +21,5 @@ bvfj bhfdjk
 :sart: http://fr.wikipedia.org/wiki/Structured_Analysis_for_Real_Time[SADT/SART]
 :semco: http://www.sdvfdsvfrttbhemcomdt.org/[SEMCO]
 :slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
+:semco: http://www.sdvfdsvfrttbhemcomdt.org/[SEMCO]
+:slidy2: http://www.w3.org/Talks/Touiiiiiiiiiiiiiiçafonctionneools/Slidy2/[W3C HTML Slidy]

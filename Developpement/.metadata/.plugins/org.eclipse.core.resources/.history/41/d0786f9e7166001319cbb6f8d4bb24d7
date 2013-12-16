@@ -1,0 +1,13 @@
+package modele;
+
+import java.util.Vector;
+
+public class UseDocx {
+
+	@Override
+	public Vector<String> mesUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

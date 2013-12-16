@@ -1,0 +1,14 @@
+package modele;
+
+import java.util.Vector;
+
+public abstract class UseType {
+	
+	public String nomFichier;
+	
+	public UseType(String pNomFichier){
+		this.nomFichier= pNomFichier;
+	}
+	
+	public Vector<String> mesUrl();
+}

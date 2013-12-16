@@ -1,6 +1,6 @@
 package vue;
 
-import controlleur.*;
+import controleur.*;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

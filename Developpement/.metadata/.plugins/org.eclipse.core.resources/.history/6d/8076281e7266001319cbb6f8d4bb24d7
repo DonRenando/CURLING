@@ -1,0 +1,12 @@
+package modele;
+
+import java.util.Vector;
+
+public class UseHtml extends UseType{
+
+	public Vector<String> mesUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

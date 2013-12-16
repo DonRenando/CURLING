@@ -1,6 +1,7 @@
 package vue;
 
-import controlleur.*;
+import controleur.*;
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -62,6 +63,7 @@ public class DlgListe extends JFrame{
 		button1.setText("Ok");
 		add(button1, CC.xy(9, 9));
 		button1.addActionListener(new ok());
+		this.pack();
 	}
 
 	// JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -82,7 +84,7 @@ public class DlgListe extends JFrame{
 
 	// Retourne la liste des url défectueux
 	public Vector<String> listUrlDef(){
-		return monCtrl.mesUrlDef();
+		return monCtrl.getListUrlDef();
 	}
 
 }

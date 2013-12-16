@@ -1,0 +1,47 @@
+package modele;
+
+import java.util.Vector;
+
+public class Url {
+	
+	
+	/**
+	 * Permet de savoir si un lien passé en paramètre est defectueux ou non<BR>
+	 * @param		pUrlString		le lien url
+	 * @return		retourne true si valide et false si invalide
+	 */
+	private boolean estDefectueux(String pUrlString) {
+		int result=this.getResponseCode(pUrlString);
+		if (result >= 400)
+			return true;
+		return false;
+	}
+	
+	/**
+	 * Permet de retourner sous forme de vecteur la liste d'url defectueux<BR>
+	 * @return		retourne la liste des url defectueux sous forme de vecteur de String
+	 */
+	public Vector<String> mesUrlDef(){
+	// Cette Méthode renvoie sous forme de vector tous les url défectueux
+		
+		Vector<String> vLignes= readLine(this.nomFichier);
+		Vector<String> vUrl= mesUrl(vLignes);
+				
+		Vector<String> mesUrlDefV= new Vector<String>();
+		int i=0;
+		int nbEl= vUrl.size();
+		String monLien;
+		
+		while (i < nbEl){
+			monLien = vUrl.elementAt(i);
+			
+			if (estDefectueux(monLien))
+				mesUrlDefV.add(monLien);
+			
+			i++;
+		}
+		
+		return mesUrlDefV;
+	}
+
+}
