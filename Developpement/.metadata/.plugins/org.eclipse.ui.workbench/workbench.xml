@@ -47,9 +47,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
-<customFilters userDefinedPatternsEnabled="false">
-<xmlDefinedFilters>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
@@ -163,10 +161,10 @@
 <fastViewBars>
 <fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
 <fastViews>
-<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.2987616"/>
 <view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.2987616"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29411766"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="131072" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="0">
@@ -264,8 +262,35 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Url.java" tooltip="URL/src/modele/Url.java">
+<persistable path="/URL/src/modele/Url.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlAccueil.java" tooltip="URL/src/controleur/CtrlAccueil.java">
+<persistable path="/URL/src/controleur/CtrlAccueil.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgListe.java" tooltip="URL/src/vue/DlgListe.java">
+<persistable path="/URL/src/vue/DlgListe.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="principal.java" tooltip="URL/src/principal.java">
 <persistable path="/URL/src/principal.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseTxt.java" tooltip="URL/src/modele/UseTxt.java">
+<persistable path="/URL/src/modele/UseTxt.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseHtml.java" tooltip="URL/src/modele/UseHtml.java">
+<persistable path="/URL/src/modele/UseHtml.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseDocx.java" tooltip="URL/src/modele/UseDocx.java">
+<persistable path="/URL/src/modele/UseDocx.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseType.java" tooltip="URL/src/modele/UseType.java">
+<persistable path="/URL/src/modele/UseType.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseInterface.java" tooltip="URL/src/modele/UseInterface.java">
+<persistable path="/URL/src/modele/UseInterface.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlListe.java" tooltip="URL/src/controleur/CtrlListe.java">
+<persistable path="/URL/src/controleur/CtrlListe.java"/>
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="theme-47.epf" tooltip="C:\Program Files\Java\theme-47.epf">
 <persistable uri="file:/C:/Program%20Files/Java/theme-47.epf"/>
