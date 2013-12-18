@@ -2,7 +2,6 @@ package vue;
 
 import controleur.*;
 
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -82,7 +81,10 @@ public class DlgListe extends JFrame{
 		}
 	}
 
-	// Retourne la liste des url défectueux
+	/**
+	 * Permet de retourner la liste des url defectueuses en faisant appel à une méthode de son controleur<BR>
+	 * @return		retourne un Vector<String> contenant toute les url defectueuses.
+	 */
 	public Vector<String> listUrlDef(){
 		return monCtrl.getListUrlDef();
 	}

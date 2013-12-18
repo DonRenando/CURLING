@@ -1,0 +1,11 @@
+import controleur.*;
+
+public class principal {
+
+	public static void main(String[] args) {
+		
+		CtrlAccueil monCtrl= new CtrlAccueil(); 
+		monCtrl.newDlgAccueil(monCtrl);
+		String val="C:\Users\Penchenat Matthieu\Desktop\test.docx";
+	}
+}

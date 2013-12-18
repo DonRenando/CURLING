@@ -4,21 +4,32 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Vector;
+import javax.net.ssl.HttpsURLConnection;
 
 public class Url {
 	
 	private String nomFichier;
 	
+	/**
+	 * Constructeur paramétré de Url (classe modele)<BR>
+	 * @param		pNomFichier		le nom du fichier à traiter
+	 */
 	public Url(String pNomFichier) {
 		this.nomFichier= pNomFichier;
 	}
 	
-	public String getType() {
-		// TODO
-		return "txt";
+	/**
+	 * Permet de connaitre le type du fichier défini dans ce controleur<BR>
+	 * @return		retourne sous forme d'une String "docx" si un fichier docx 
+	 * sinon "other" pour "txt" et "html"
+	 */
+	private String getType() {
+		if (this.nomFichier.contains(".docx"))
+			return "docx";
+		return "other";
 	}
 	
-	
+
 	/**
 	 * Permet de savoir si un lien passé en paramètre est defectueux ou non<BR>
 	 * @param		pUrlString		le lien url
@@ -40,11 +51,21 @@ public class Url {
 	 */
 	private int getResponseCode(String urlString) {
 		try {
-	    URL u = new URL(urlString); 
-	    HttpURLConnection huc =  (HttpURLConnection)  u.openConnection(); 
-	    huc.setRequestMethod("GET"); 
-	    huc.connect(); 
-	    return huc.getResponseCode();
+	    URL u = new URL(urlString);
+	    if (urlString.contains("https://")) {
+	    	HttpsURLConnection huc = (HttpsURLConnection) u.openConnection();
+	    	
+	    	huc.setRequestMethod("GET"); 
+	 	    huc.connect(); 
+	 	    return huc.getResponseCode();
+	    } else {
+	    	HttpURLConnection huc2 =  (HttpURLConnection)  u.openConnection();
+	    
+	    	huc2.setRequestMethod("GET"); 
+	    	huc2.connect(); 
+	    	return huc2.getResponseCode();
+	    }
+	    
 		} catch (IOException ignore){return 404;}
 	}
 	
@@ -57,10 +78,8 @@ public class Url {
 	// Cette Méthode renvoie sous forme de vector tous les url défectueux
 		Vector<String> vUrl=null;
 		
-		if (getType() == "txt") {
-			vUrl= (new UseTxt(this.nomFichier)).mesUrl();
-		}else if (getType() == "html") {
-			vUrl= (new UseHtml(this.nomFichier)).mesUrl();
+		if (getType() == "other") {
+			vUrl= (new UseOther(this.nomFichier)).mesUrl();
 		}else 
 			vUrl= (new UseDocx(this.nomFichier)).mesUrl();
 				

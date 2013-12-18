@@ -2,86 +2,132 @@ package vue;
 
 import controleur.*;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-import com.jgoodies.forms.factories.*;
-import com.jgoodies.forms.layout.*;
 
-public class DlgAccueil extends JFrame {
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JFileChooser;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
+public class DlgAccueil extends JFrame implements DocumentListener, ActionListener
+{
 	
-	private CtrlAccueil monCtrl=null;
-	
-	public DlgAccueil(CtrlAccueil pMonCtrl){
-		this.monCtrl=pMonCtrl;
-		initComponents();
-	}
-	
-	public int valider(String pNomFichier){
-		return (monCtrl.afficherListe(pNomFichier));
-	}
-	
-	private void initComponents() {
-
-		label2 = new JLabel();
-		label1 = new JLabel();
-		textField1 = new JTextField();
-		button1 = new JButton();
-		
-		//super("Acceuil CURLING");
-
-		this.setResizable(true);
-		this.setVisible(true);
-
-
-		setLayout(new FormLayout(
-			"2*(default, $lcgap), 31dlu, 8*($lcgap, default)",
-			"default, $lgap, 27dlu, 9*($lgap, default)"));
-
-		//---- label2 ----
-		label2.setText("Test des URLs dans le fichier");
-		add(label2, CC.xywh(5, 3, 12, 1));
-
-		//---- label1 ----
-		label1.setText("Fichier :");
-		add(label1, CC.xy(5, 5, CC.RIGHT, CC.DEFAULT));
-
-		//---- textField1 ----
-		textField1.setText("Nom du fichier");
-		add(textField1, CC.xywh(7, 5, 15, 1));
-
-		//---- button1 ----
-		button1.setText("Valider");
-		add(button1, CC.xy(7, 9));
-		button1.addActionListener(new valider());
-		
-		this.pack();
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-	}
-
-	private JLabel label2;
+	private JButton Parcourir, Valider, Liste;
+	private JTextField url; 
+	private String nomfichier;
 	private JLabel label1;
-	private JTextField textField1;
-	private JButton button1;
-	
-	// Lorsque l'on clique sur le bouton
-	class valider implements ActionListener {		
-		public void actionPerformed(ActionEvent arg0) {
+	private CtrlAccueil monCtrl;
+
+
+		public DlgAccueil(CtrlAccueil pMonCtrl){
+			super("CURLING");
+			this.monCtrl= pMonCtrl;
+			setLayout(null);
+			setBounds(200,200,600,200);
+		
+		url = new JTextField(null);
+		url.setBounds(25,50,325,25);
+		add(url);
 			
-			String pNomFichier = textField1.getText();
-			if (valider(pNomFichier) == 1) // Si fichier inexistant
-			{
-				// Modifier le texte de l'entrée standart
-				// ajouter: "fichier inexistant" et le mettre en rouge.
-				Color redColor = new Color(255 , 0 , 0);
-				textField1.setForeground(redColor);
-				textField1.setText("Fichier inexistant");
+		Parcourir = new JButton("Parcourir");
+		Parcourir.setBounds(355, 50, 100, 25);
+		add(Parcourir);
+
+		
+		Valider = new JButton("Valider");
+		Valider.setBounds(25, 100, 100, 25);
+		add(Valider);
+		
+		Liste = new JButton("Liste");
+		Liste.setBounds(140, 100, 100, 25);
+		//add(Liste);
+		
+		label1 = new JLabel();
+		label1.setText("Testeur d'URL");
+		label1.setBounds(25, 10, 100, 25);
+		add(label1);
+		
+		
+		url.setEditable(false);
+		Valider.setEnabled(false);
+		url.getDocument().addDocumentListener(this);
+		
+		Parcourir.addActionListener(this);
+		Liste.addActionListener(this);
+		Valider.addActionListener(new Valider());
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+}
+		//-------------------------------------------------------------------------------
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == this.Parcourir){
+				choix frame = new choix();
+				url.setText(frame.fileName);
+				nomfichier = frame.fileName;
+			}
+			
+		}
+		
+		// Lorsque l'on clique sur le bouton
+		class Valider implements ActionListener {		
+			public void actionPerformed(ActionEvent arg0) {
+				String pNomFichier = url.getText();
+				valider(pNomFichier);
 			}
 		}
-	}
+		
+			
+			class choix extends JFrame {
+
+				JFileChooser choix;
+				String fileName;
+				
+				public choix() {
+					choix = new JFileChooser();
+					int recherche = choix.showOpenDialog(new JFrame());
+					if (recherche == JFileChooser.APPROVE_OPTION) {
+					fileName = choix.getSelectedFile().getPath();
+					}
+				
+			
+			}
+			
+		}
+		
+			@Override
+			public void changedUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
 
 
+			/**
+			 * Permet d'activer le bouton valider que lorsque l'utilisateur à choisi un fichier<BR>
+			 * @param		arg0	le fichier choisi
+			 */
+			public void insertUpdate(DocumentEvent arg0) {
+				Valider.setEnabled(true);
+			}
+			
+			@Override
+			public void removeUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			
+			/**
+			 * Permet d'afficher la liste des url defectueuses en faisant appel à son controleur<BR>
+			 * @param		pNomFichier			Le nom de l'utilisateur
+			 */
+			public void valider(String pNomFichier){
+				this.monCtrl.afficherListe(pNomFichier);
+			}
 }
+
+
