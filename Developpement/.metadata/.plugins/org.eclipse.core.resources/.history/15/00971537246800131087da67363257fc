@@ -1,0 +1,76 @@
+package Modele;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Vector;
+
+
+
+
+
+public class VerificationValiditeLien {
+	
+	//Attributs de la classe
+	private Vector<String> vect=new Vector<String>();
+
+	public VerificationValiditeLien(Vector<String> v) {
+		// TODO Auto-generated constructor stub
+		vect = v;
+		
+	}
+	
+	/**
+	 * Méthode qui test le lien 
+	 * @return true or false
+	 */
+	
+	public static int exists(String url1) throws MalformedURLException, IOException
+	{
+		URL strUrl = new URL("http://hjgjgoogle.fr");
+	    
+		try {
+	    HttpURLConnection connect =(HttpURLConnection)strUrl.openConnection();
+	    connect.setRequestMethod("GET");
+		return (connect.getResponseCode());
+		}catch (IOException e){return 404;}
+	    
+
+	 
+	}
+	
+	/**
+	 * On aura une méthode qui va tester chaque lien et dire si le lien est valide ou pas
+	 * La méthode renvoie un vector contenant chaque lien concatené avec ok ou nok
+	 * 
+	 * @param vector de liens
+	 * @return vector de liens défectueux et non défectueux
+	 * @throws Exception 
+	 */
+	
+	
+	public Vector<String> etatLien (Vector<String> vecto) throws Exception
+	{
+		//Vecteur qui sera retourné
+		Vector<String> vReturn = new Vector<String>();
+		int taill = vecto.size();
+		
+		for (int i=0;i<taill;i++)
+		{
+			if(VerificationValiditeLien.exists(vecto.elementAt(i))<400)
+			{
+				//on concatène et on ajoute au 2e vector
+				vReturn.add(vecto.elementAt(i)+"     ---> OK");	
+			}
+			else
+			{
+				vReturn.add(vecto.elementAt(i)+"      ---> NOK");
+			}	
+		}
+				
+		return vReturn;
+		
+	}
+
+}//fin de la classe

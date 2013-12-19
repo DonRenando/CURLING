@@ -1,0 +1,29 @@
+package Test;
+
+import modele.*;
+
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.io.IOException;
+
+import javax.net.ssl.HttpsURLConnection;
+
+
+// Cet executable permet de valider la fonctionnalité de tester un url.
+// Vérifier si cet url est valid ou non.
+
+// Ce programme de tester vérifie si les fonctions estDefectueux(String pUrlString)
+// et getResponseCode sont valides
+public class testUrl {
+
+
+	public static void main(String[] args) {
+		testUrl f=new testUrl();
+
+		Url testURL= new Url("blabla");
+		System.out.println(f.estDefectueux("http://wims.auto.u-psud.fr/wims/wims.cgi?lang=fr&module=adm/class/classes&type=authparticipant&class=4029531&subclass=yes"));
+		System.out.println(f.estDefectueux("https://www.google.fr/"));
+
+
+	}
+}

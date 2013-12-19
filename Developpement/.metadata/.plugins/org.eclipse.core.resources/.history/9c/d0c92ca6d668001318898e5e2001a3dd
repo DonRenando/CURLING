@@ -1,0 +1,48 @@
+package Test;
+
+import java.util.Vector;
+import modele.*;
+
+
+// Ce test nous permet de vérifier la fonction mesUrl() 
+// qui renvoie la liste des liens contenu dans un fichier 
+// de type texte ou html, le traitement est le même dans les deux cas.
+public class UseOtherTest {
+	
+	
+	public static void main(String[] args) {
+		UseOther montxt= new UseOther("test.txt");
+		Vector<String> vUrl = (montxt.mesUrl());
+		int i=0;
+		int nbEl = vUrl.size();
+		
+		
+		UseOther monhtml= new UseOther("ex2.html");
+		Vector<String> vUrl2 = (monhtml.mesUrl());
+		int j=0;
+		int nbEl2 = vUrl2.size();
+		
+		
+		System.out.println("Test d'un fichier txt.");
+		System.out.println();
+		while (i<nbEl){
+			System.out.println(vUrl.elementAt(i));
+			i++;
+		}
+		montxt = null;
+		vUrl=null;
+		
+		
+		
+		
+		
+
+		
+		System.out.println("Test d'un fichier html.");
+		System.out.println();
+		while (j<nbEl2){
+			System.out.println(vUrl2.elementAt(i));
+			j++;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package Test;
+
+import modele.*;
+
+public class UrlTest {
+	
+	public void main() {
+		System.out.println("coucou");;
+	}
+
+}

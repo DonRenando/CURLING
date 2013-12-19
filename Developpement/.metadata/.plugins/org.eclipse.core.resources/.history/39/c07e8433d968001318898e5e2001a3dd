@@ -1,0 +1,32 @@
+package Test;
+
+import java.util.Vector;
+
+import modele.*;
+
+
+// Ce programme permet de tester la fonction 
+public class UrlTest {
+	
+	public static void main(String[] args) {
+		
+		//String monfichier = "test.docx";
+		//String monfichier = "ex2.html";
+		String monfichier = "test.txt";
+		
+		
+		Url monModelUrl= new Url(monfichier);
+		Vector<String> vUrlDef= monModelUrl.mesUrlDef();
+		
+		int i=0;
+		int nbEl= vUrlDef.size();
+		
+		System.out.println("test de "+monfichier);
+		while (i<nbEl){
+			;
+		}
+		
+		
+	}
+
+}
