@@ -1,0 +1,38 @@
+package Test;
+
+import java.util.Vector;
+
+import vue.*;
+import controleur.*;
+
+public class VueTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		 Vector<String> v = new Vector<String>(); 
+		v.addElement("www.lienquimarchepas.com"); 
+		v.addElement("www.lienquibeug.fr"); 
+		
+		
+		CtrlAccueil monCtrlAccueil = new CtrlAccueil();
+		CtrlListe monCtrlListe = new CtrlListe("blabla");
+		
+		DlgAccueil mv;
+		DlgListe l;
+		mv = new DlgAccueil(monCtrlAccueil);
+		l = new DlgListe(monCtrlListe);
+		
+		mv.setVisible(true);
+		l.setVisible(true);
+
+	}
+
+}
+
+
+
+
