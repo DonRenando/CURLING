@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 import jfilechooserdemo.*;
 
 public class Test {
@@ -8,9 +10,17 @@ public class Test {
 	public static void main(String[] args) {
 		
 		
-		az mv;
-		mv = new az("CURLING");
+		 Vector<String> v = new Vector<String>(); 
+		v.addElement("www.lienquimarchepas.com"); 
+		v.addElement("www.lienquibeug.fr");  
+		
+		DlgAccueil mv;
+		DlgListe l;
+		mv = new DlgAccueil();
+		l = new DlgListe();
+		
 		mv.setVisible(true);
+		l.setVisible(true);
 
 	}
 
