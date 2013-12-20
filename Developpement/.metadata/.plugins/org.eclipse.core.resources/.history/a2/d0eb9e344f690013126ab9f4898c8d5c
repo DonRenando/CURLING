@@ -124,7 +124,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			 */
 			public void insertUpdate(DocumentEvent arg0) {
 				Valider.setEnabled(true);
-				//Valider.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+				Valider.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 				wait.setVisible(true);
 			}
 			
