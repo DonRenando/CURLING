@@ -30,10 +30,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	private JLabel label1;
 	private CtrlAccueil monCtrl;
 
-	
-		public String getNomFichier() {
-			return this.nomfichier;
-		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){
 			super("CURLING");
@@ -104,10 +100,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			
 			class choix extends JFrame {
 
-				/**
-				 * 
-				 */
-				private static final long serialVersionUID = 1L;
 				JFileChooser choix;
 				String fileName;
 				
@@ -125,6 +117,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
 				
 			}
 

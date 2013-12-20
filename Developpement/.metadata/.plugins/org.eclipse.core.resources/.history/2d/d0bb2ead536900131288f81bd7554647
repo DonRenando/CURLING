@@ -30,15 +30,12 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	private JLabel label1;
 	private CtrlAccueil monCtrl;
 
-	
-		public String getNomFichier() {
-			return this.nomfichier;
-		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){
 			super("CURLING");
 			this.monCtrl= pMonCtrl;
 			setLayout(null);
+			nomfichier= "blabla"
 			setBounds(200,200,600,200);
 		
 		url = new JTextField(null);

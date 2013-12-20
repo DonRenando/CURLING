@@ -3,10 +3,10 @@ package vue;
 import controleur.*;
 
 import java.awt.Color;
-//import java.awt.Cursor;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import javax.swing.*;
+import javax.swing.*;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -19,10 +19,6 @@ import javax.swing.event.DocumentListener;
 public class DlgAccueil extends JFrame implements DocumentListener, ActionListener
 {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JButton Parcourir, Valider, Liste;
 	private JTextField url; 
 	private JLabel wait; 
@@ -30,10 +26,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	private JLabel label1;
 	private CtrlAccueil monCtrl;
 
-	
-		public String getNomFichier() {
-			return this.nomfichier;
-		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){
 			super("CURLING");
@@ -104,10 +96,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			
 			class choix extends JFrame {
 
-				/**
-				 * 
-				 */
-				private static final long serialVersionUID = 1L;
 				JFileChooser choix;
 				String fileName;
 				
@@ -125,6 +113,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
 				
 			}
 

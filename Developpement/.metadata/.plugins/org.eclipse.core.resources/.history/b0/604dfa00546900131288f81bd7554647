@@ -32,7 +32,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 
 	
 		public String getNomFichier() {
-			return this.nomfichier;
+			this.nomfichier;
 		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){

@@ -31,8 +31,8 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	private CtrlAccueil monCtrl;
 
 	
-		public String getNomFichier() {
-			return this.nomfichier;
+		public String getNomFichier(){
+			;
 		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){

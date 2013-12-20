@@ -14,10 +14,6 @@ import com.jgoodies.forms.layout.*;
 
 public class DlgListe extends JFrame{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private CtrlListe monCtrl=null;
 	
 	public DlgListe(CtrlListe pMonCtrl){
