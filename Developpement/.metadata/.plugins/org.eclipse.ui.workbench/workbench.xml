@@ -273,6 +273,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="principal.java" tooltip="URL/src/principal.java">
+<persistable path="/URL/src/principal.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlListe.java" tooltip="URL/src/controleur/CtrlListe.java">
 <persistable path="/URL/src/controleur/CtrlListe.java"/>
 </file>
@@ -284,9 +287,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VueTest.java" tooltip="URL/src/Test/VueTest.java">
 <persistable path="/URL/src/Test/VueTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="principal.java" tooltip="URL/src/principal.java">
-<persistable path="/URL/src/principal.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testUrlValidity.java" tooltip="URL/src/Test/testUrlValidity.java">
 <persistable path="/URL/src/Test/testUrlValidity.java"/>
