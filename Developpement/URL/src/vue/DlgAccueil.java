@@ -4,10 +4,9 @@ import controleur.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JFileChooser;
 import javax.swing.event.DocumentEvent;
@@ -16,12 +15,20 @@ import javax.swing.event.DocumentListener;
 public class DlgAccueil extends JFrame implements DocumentListener, ActionListener
 {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton Parcourir, Valider, Liste;
 	private JTextField url; 
 	private String nomfichier;
 	private JLabel label1;
 	private CtrlAccueil monCtrl;
 
+	
+		public String getNomFichier() {
+			return this.nomfichier;
+		}
 
 		public DlgAccueil(CtrlAccueil pMonCtrl){
 			super("CURLING");
@@ -51,8 +58,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		label1.setBounds(25, 10, 100, 25);
 		add(label1);
 		
-		
-		url.setEditable(false);
+		//url.setEditable(false);
 		Valider.setEnabled(false);
 		url.getDocument().addDocumentListener(this);
 		
@@ -61,6 +67,8 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		Valider.addActionListener(new Valider());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
+		
+		
 		
 }
 		//-------------------------------------------------------------------------------
@@ -84,6 +92,10 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			
 			class choix extends JFrame {
 
+				/**
+				 * 
+				 */
+				private static final long serialVersionUID = 1L;
 				JFileChooser choix;
 				String fileName;
 				
@@ -101,8 +113,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 
 
@@ -116,7 +126,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			

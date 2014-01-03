@@ -1,7 +1,0 @@
-package modele;
-
-public interface UseInterface {
-	
-	public Vector<String> mesUrl();
-
-}

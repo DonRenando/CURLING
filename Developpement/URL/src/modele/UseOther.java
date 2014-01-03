@@ -8,6 +8,7 @@ import java.util.Vector;
 public class UseOther {
 	
 	private String nomFichier;
+	private Scanner sc;
 	
 	/**
 	 * Constructeur paramétré de UseOther (classe modele)<BR>
@@ -21,11 +22,12 @@ public class UseOther {
 	 * Permet de recuperer la liste des liens contenu dans un fichier de type autre que "docx".<BR>
 	 * @return		retourne la liste des lien du fichier sous forme de Vector<String>
 	 */
+	@SuppressWarnings("resource")
 	public Vector<String> mesUrl() {
 		
 		Vector<String> Urls = new Vector<String>();
 		
-		Scanner scanner = null;
+		Scanner scanner= null;
 		try {
 			scanner = new Scanner(new File(this.nomFichier));
 		} catch (FileNotFoundException ignore) {}
@@ -37,8 +39,7 @@ public class UseOther {
 			//Toutes les lignes et enregisté dans le scanner
 			String l =scanner.next();
 					          
-			//on utilise l'expression régulière pour traiter la ligne
-			Scanner sc = new Scanner(l);
+			sc = new Scanner(l);
 			String l2 =  sc.findInLine(regex);
 					       
 			if (l2 != null) {

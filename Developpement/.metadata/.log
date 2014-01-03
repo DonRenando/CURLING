@@ -70,3 +70,13 @@ Java Model Exception: Java Model Status [Unknown javadoc format for FileNotFound
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1009 2013-12-18 10:43:58.295
 !MESSAGE Unknown javadoc format for FileNotFoundException {key=Ljava/io/FileNotFoundException;} [in FileNotFoundException.class [in java.io [in C:\Program Files\Java\jre7\lib\rt.jar]]]
+!SESSION 2014-01-03 13:22:11.382 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product -data C:\Users\Penchenat Matthieu\Documents\GitHub\CURLING\Developpement -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.epp.usagedata.recording 1 0 2014-01-03 13:23:13.874
+!MESSAGE Usage data upload to http://udc.eclipse.org/upload.php failed with error code 404.
