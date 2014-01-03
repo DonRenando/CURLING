@@ -2,12 +2,8 @@ package vue;
 
 import controleur.*;
 
-import java.awt.Color;
-//import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import javax.swing.*;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -25,7 +21,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	private static final long serialVersionUID = 1L;
 	private JButton Parcourir, Valider, Liste;
 	private JTextField url; 
-	private JLabel wait; 
 	private String nomfichier;
 	private JLabel label1;
 	private CtrlAccueil monCtrl;
@@ -63,14 +58,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		label1.setBounds(25, 10, 100, 25);
 		add(label1);
 		
-		wait = new JLabel("Validez et attendez un instant");
-		wait.setBounds(200,100,200,25);
-		add(wait);
-		wait.setVisible(false);
-		wait.setForeground(Color.red);
-		
-		
-		url.setEditable(false);
+		//url.setEditable(false);
 		Valider.setEnabled(false);
 		url.getDocument().addDocumentListener(this);
 		
@@ -125,7 +113,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				
 			}
 
 
@@ -135,8 +122,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			 */
 			public void insertUpdate(DocumentEvent arg0) {
 				Valider.setEnabled(true);
-				//Valider.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-				wait.setVisible(true);
 			}
 			
 			@Override
@@ -150,10 +135,7 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			 * @param		pNomFichier			Le nom de l'utilisateur
 			 */
 			public void valider(String pNomFichier){
-				
 				this.monCtrl.afficherListe(pNomFichier);
-				
-				
 			}
 }
 

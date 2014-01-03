@@ -17,6 +17,7 @@ public class testUrlValidity {
 	
 	private boolean estDefectueux(String pUrlString) {
 		int result=this.getResponseCode(pUrlString);
+		System.out.println(result);
 		if (result >= 400)
 			return true;
 		return false;
@@ -47,8 +48,8 @@ public class testUrlValidity {
 	public static void main(String[] args) {
 		testUrlValidity f=new testUrlValidity();
 
-		System.out.println(f.estDefectueux("http://www.google.fr"));
-		System.out.println(f.estDefectueux("https://befjkhrsk"));
+		System.out.println(f.estDefectueux("http://www.eclipse.org/cdo/"));
+		System.out.println(f.estDefectueux("https://www.modelica.org"));
 
 
 	}

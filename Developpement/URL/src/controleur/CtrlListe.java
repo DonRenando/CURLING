@@ -1,7 +1,5 @@
 package controleur;
 
-
-import java.util.Vector;
 import vue.*; 
 import modele.*;
 
@@ -37,9 +35,9 @@ public class CtrlListe {
 	 * Permet de retourner la liste des Url Defectueuses d'un fichier (passé en param dans le controleur)<BR>
 	 * @return		retourne Vector<String> la liste des Url defectueuses
 	 */
-	public Vector<String> getListUrlDef() {	
+	public String[][] getListUrlDef(ProcessBarListener monListener) {	
 		// Creation de la classe modèle Url:
-		Url monModeleFichier= new Url(this.nomFichier);
+		Url monModeleFichier= new Url(this.nomFichier, monListener);
 		return monModeleFichier.mesUrlDef();
 	}
 	

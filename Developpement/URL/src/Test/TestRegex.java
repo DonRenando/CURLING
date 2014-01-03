@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 	public class TestRegex {
 
+	private static Scanner scanner;
+	private static Scanner sc;
+
 	/**
 	 * @param args
 	 */
@@ -18,14 +21,14 @@ import java.util.Scanner;
 		
 		// Nous utilisons la classe Scanner pour utiliser de notre regex.
 		try {
-		Scanner scanner = new Scanner(new File("test.txt"));
+		scanner = new Scanner(new File("test.txt"));
 		String regex = "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
 		
 		while (scanner.hasNext()) {
 		
 		    String l =scanner.next();
 		          
-		    Scanner sc = new Scanner(l);
+		    sc = new Scanner(l);
 		    String l2 =  sc.findInLine(regex);
 		       
 		    if (l2 != null)

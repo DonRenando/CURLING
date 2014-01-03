@@ -22,6 +22,7 @@ public class UseOther {
 	 * Permet de recuperer la liste des liens contenu dans un fichier de type autre que "docx".<BR>
 	 * @return		retourne la liste des lien du fichier sous forme de Vector<String>
 	 */
+	@SuppressWarnings("resource");
 	public Vector<String> mesUrl() {
 		
 		Vector<String> Urls = new Vector<String>();
