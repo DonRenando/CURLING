@@ -1,6 +1,0 @@
-package Test;
-
-import modele.*;
-public class UrlTest {
-
-}
