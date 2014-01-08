@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="src/jgoodies-common-javadoc.zip"/>
-	<classpathentry kind="lib" path="src/jgoodies-common-src.zip"/>
-	<classpathentry kind="lib" path="src/jgoodies-common.jar"/>
-	<classpathentry kind="lib" path="src/jgoodies-forms-javadoc.zip"/>
-	<classpathentry kind="lib" path="src/jgoodies-forms-src.zip"/>
-	<classpathentry kind="lib" path="src/jgoodies-forms.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-common-javadoc.zip"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-common-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-common.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-forms-javadoc.zip"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-forms-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="src/jgoodies-forms.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

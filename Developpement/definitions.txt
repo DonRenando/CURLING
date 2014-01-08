@@ -1,0 +1,184 @@
+// raccourcis sites
+:aadl: http://www.aadl.info/[AADL]indexterm:[AADL]
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]indexterm:[AsciiDoc]
+:dasciidoc: http://www.methods.co.nz/asciidoc[d'AsciiDoc]indexterm:[AsciiDoc]
+:artisan: http://www.artisansw.com/[Artisan]
+:cdo: http://www.eclipse.org/cdo/[CDO]
+:deckjsite: http://houqp.github.io/asciidoc-deckjs/[deckjs]
+:doors: http://www-03.ibm.com/software/products/fr/fr/ratidoor/[DOORS(TM)]
+:ea: http://www.sparxsystems.com.au/products/mdg/tech/sysml/index.html[Enterprise Architect]
+:eclipse: http://www.eclipse.org[eclipse]indexterm:[eclipse]
+:gemoc: http://gemoc.org/[GEMOC]
+:grafcet: http://fr.wikipedia.org/wiki/Grafcet[Grafcet]
+:magicDraw: http://www.nomagic.com/[MagicDraw]
+:marte: http://www.omgmarte.org/[MARTE]indexterm:[MARTE]
+:modelica: https://www.modelica.org/[Modelica(R)]
+:modelio: http://www.modeliosoft.com/[Modelio]
+:models: http://www.modelsconference.org/[MODELS]
+:moodle: http://webetud.iut-blagnac.fr[Moodle]
+:norme: http://www.omg.org/spec/SysML/1.3/PDF/[OMG SysML v1.3]
+:omg: http://www.omg.org[OMG(TM)]indexterm:[OMG]
+:lomg: http://www.omg.org[l'OMG(TM)]indexterm:[OMG]
+:OSLC: http://open-services.net/[OSCL]
+:pandoc: http://johnmacfarlane.net/pandoc/[Pandoc]
+:papyrus: http://www.eclipse.org/papyrus/[Papyrus]
+:plantumlweb: http://plantuml.sourceforge.net/[plantUML]
+:rapportPotier: http://www.industrie.gouv.fr/logiciel-embarque/Rapport-BGLE-final.pdf[Rapport Potier]
+:rcp: http://wiki.eclipse.org/index.php/Rich_Client_Platform[RCP]
+:remodd: http://www.cs.colostate.edu/remodd/v1/[ReMoDD]
+:rhapsody: http://www-142.ibm.com/software/products/us/en/ratirhap[Rhapsody]indexterm:[Rhapsody]
+:rtaw: http://www.realtimeatwork.com/[RTaW]indexterm:[RTaW]
+:sart: http://fr.wikipedia.org/wiki/Structured_Analysis_for_Real_Time[SADT/SART]
+:semco: http://www.semcomdt.org/[SEMCO]
+:slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
+:sosym: http://www.sosym.org/[SoSyM]
+:sym: http://www.omg.org/spec/SyM/[SysML-Modelica]
+:sysml: http://www.omgsysml.org/[SysML(TM)]indexterm:[SysML]
+:sysmltrends: http://www.google.fr/trends/explore#q=sysml[SysML Trends]
+:topcased: http://www.topcased.org[TOPCASED]indexterm:[Topcased]
+:uml: http://www.uml.org/[UML(TM)]indexterm:[UML(TM)]
+:duml: http://www.uml.org/[d'UML(TM)]indexterm:[UML(TM)]
+:umlspec: http://www.omg.org/spec/UML/2.4.1/Infrastructure/PDF/[UML 2.4.2 Specifictation]
+:vle: http://www.vle-project.org/wiki/Main_Page[VLE]
+:xtext: http://www.eclipse.org/Xtext/[Xtext]
+:yuml: http://yuml.me/[yuml]
+	
+// personnes et institutions
+:afis: http://www.afis.fr/[AFIS](((AFIS)))
+:agusti: Agusti Canals
+:dl: http://www.dept-info.ups-tlse.fr/index.php?option=com_content&view=article&id=294&Itemid=697&lang=fr[Master DL-SI]
+:eia: http://www.eciaonline.org/eiastandards/[EIA](((EIA)))
+:fast: http://fr.wikipedia.org/wiki/Analyse_fonctionnelle_(conception)[FAST](((FAST)))
+:ieee: http://www.ieee.org/[IEEE](((IEEE)))
+:incose: http://www.incose.org/[INCOSE]indexterm:[INCOSE](((INCOSE)))
+:iso: http://www.iso.org/[ISO](((ISO)))
+:irit: http://www.irit.fr[IRIT](((IRIT)))
+:lirit: http://www.irit.fr[l'IRIT](((IRIT)))
+:iut: http://www.iut-blagnac.fr/[IUT de Blagnac]
+:liut: http://www.iut-blagnac.fr/[l'IUT de Blagnac]
+:jmi: Jean-Michel Inglebert
+:jmimail: jean-michel.inglebert@univ-tlse2.fr
+:karina: Karina Aguilar
+:loic: mailto:loic.fejoz@realtimeatwork.com[Loïc Féjoz]
+:nasa: http://www.nasa.gov/[NASA]
+:nico: Nicolas Belloir
+:nonne: Laurent Nonne
+:prfc: http://www.dotnetguru2.org/proques/index.php[Pascal Roques]
+:pdss:  Pierre de Saqui Sannes
+:rf: mailto:raphael.faudou@atos.net[Raphaël Faudou]
+:rdp: Réseaux de Petri
+:sysmlfrance: http://www.sysml-france.fr[SysML-France]indexterm:[SysML-France]
+:univ-tlse: http://www.univ-toulouse.fr[Univesité de Toulouse]
+:luniv-tlse: http://www.univ-toulouse.fr[l'Univesité de Toulouse]
+:univ-tlse2: http://www.univ-tlse2.fr[Université de Toulouse II - Le Mirail]
+:luniv-tlse2: http://www.univ-tlse2.fr[l'Université de Toulouse II - Le Mirail]
+:uag: http://www.uag.mx/[Universitad Autónoma de Guadalajara]
+:luag: http://www.uag.mx/[l'Universitad Autónoma de Guadalajara]
+:uppa: http://www.univ-pau.fr/[Université de Pau et des Pays de l'Adour]
+:luppa: http://www.univ-pau.fr/[l'Université de Pau et des Pays de l'Adour]
+:ups: http://www.univ-tlse3.fr[UPS]
+:lups: http://www.univ-tlse3.fr[l'UPS]
+
+
+//people IUT BLAGNAC //
+:al: Amélie Legrand
+:ap: André Peninou
+:as: Adriana Soveja
+:avdb: Adrien van den Bossche
+:db: Damien Brulin
+:eb: Elizabeth Bougeois
+:ec: Eric Campo
+:fp: Fabrice Peyrard
+:io: Iulian Ober
+:jfl: Jean-François Llibre
+:jmb: mailto:bruel@irit.fr[Jean-Michel Bruel]
+:jmbemail: bruel@irit.fr
+:jmi: Jean-Michel Inglebert
+:la: Laurent Andrieu
+:lr: Laurence Redon
+:mdm: Marianne de Michiel
+:mfc: Marie-Françoise Canut
+:nc: Nicolas Cazenave
+:ot: Olivier Teste
+:pso: Pascal Sotin
+:pst: Patricia Stolf
+:tva: Thierry Val
+:tvi: Thierry Villemur
+:xd: Xavier Daran
+
+//people IRIT//
+:am: mailto:machonin@irit.fr[André Machonin]
+:antonio: mailto:serpa@irit.fr[Antonio Serpa]
+:chantal: Chantal Soulé-Dupuy
+:chiab: mailto:hanachi@univ-tlse1.fr[Chiab Hanachi]
+:dubois: Emmanuel Dubois
+:ft: mailto:thiebolt@irit.fr[François Thiebolt]
+:gdc: mailto:dacosta@irit.fr[Georges Da Costa]
+:glize: Pierre Glize
+:ileana: mailto:ober@irit.fr[Ileana Ober]
+:isabelle: Isabelle Ferrané
+:jmp: mailto:Jean-Marc.Pierson@irit.fr[Jean-Marc Pierson]
+:migeon: Frédérique Migeon
+:mpg: mailto:Marie-Pierre.Gleizes@irit.fr[Marie-Pierre Gleizes]
+:pinquier: Julien Pinquier
+:truillet: mailto:truillet@irit.fr[Philippe Truillet]
+:vela: Fred Vela
+
+// Autres //
+:casula: Marina Casula
+:edyta: mailto:edyta.osuch@univ-tlse2.fr[Edyta Osuch]
+:marquie: mailto:marquie@univ-tlse2.fr[JC Marquié]
+:mk: mailto:mohamed.kaaniche@laas.fr[Mohamed Kaaniche]
+:monteil: Thierry Monteil
+
+// Equipes //
+:macao: http://www.irit.fr/-Equipe-MACAO-[MACAO]
+:sepia: http://www.irit.fr/-Equipe-SEPIA-[SEPIA]
+:calmip: http://www.calmip.cict.fr/spip/[CALMIP]
+
+
+//links
+:cnriut: http://cnr-iut.univ-corse.fr/Le-CNR-IUT_a21.html[CNRIUT]
+:durcalc: http://en.wikipedia.org/wiki/Duration_calculus[Duration Calculus]
+:feder: http://www.europe-en-france.gouv.fr/Configuration-Generale-Pages-secondaires/FEDER[FEDER]
+:irit: http://www.irit.fr[IRIT]
+:knx: http://www.knx.fr/[KNX]
+:laas: http://www.laas.fr[LAAS]
+:mi: http://mi.iut-blagnac.fr[Maison Intelligente]
+:msh: http://w3.msh.univ-tlse2.fr/[MSHS-T]
+:plh: http://plh.univ-tlse2.fr/[PLH]
+
+// SysML diagrams
+:seq: sd(((sd)))
+:sd: sd(((sd)))
+:bdd: bdd(((bdd)))
+:ibd: ibd(((ibd)))
+:act: act(((act)))
+:stm: stm(((stm)))
+:req: req(((req)))
+:uc: uc(((uc)))
+:pkg: pkg(((pkg)))
+:par: par(((par)))
+:dss: dss(((dss)))
+
+// data
+:eggstitle: Humour
+:STI2D: STI2D(((STI2D)))
+:Requirements: Requirements
+:Structure: Structure
+:Behavior: Comportement
+:Crosscutting: Transverse
+:organisation: Organisation
+:analysis: Analyse
+:design: Conception
+:implementation: Implémentation
+:resume: En résumé
+:revisions: Questions de révision
+:is: Ingénierie Système(((IS)))
+:lis: l'Ingénierie Système(((IS)))
+ifndef::uk[] 
+:stakeholders: parties prenantes 
+endif::uk[]
+:satisfy: +<<satisfy>>+
+:verify: +<<verify>>+
+	

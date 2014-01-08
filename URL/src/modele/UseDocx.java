@@ -12,6 +12,9 @@ import java.util.zip.ZipFile;
 public class UseDocx {
 	
 	private String nomFichier;
+	private ZipFile zipFile;
+	private Scanner scanner;
+	private Scanner sc;
 	
 	/**
 	 * Constructeur paramétré de UseDocx (classe modele)<BR>
@@ -32,7 +35,6 @@ public class UseDocx {
 	 */
 	private InputStream getZipFileStream(String pChemin){
 		
-		ZipFile zipFile;
 		try {
 			zipFile = new ZipFile(new File(pChemin));
 			
@@ -59,14 +61,14 @@ public class UseDocx {
 	public Vector<String> mesUrl() {
 		
 		Vector<String> Urls = new Vector<String>();
-		Scanner scanner = new Scanner(getZipFileStream(this.nomFichier));
+		scanner = new Scanner(getZipFileStream(this.nomFichier));
 		String regex = "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
 				
 		while (scanner.hasNext()) {
 				
 			String l =scanner.next();
 					          
-			Scanner sc = new Scanner(l);
+			sc = new Scanner(l);
 			String l2 =  sc.findInLine(regex);
 					       
 			if ((l2 != null) && (!l2.contains("http://schemas."))) {
