@@ -1,5 +1,6 @@
 package modele;
 
+
 public interface ProcessBarListener {
 	
 	void nbIterations(int nbI);

@@ -1,0 +1,210 @@
+package modele;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Vector;
+
+import javax.net.ssl.HttpsURLConnection;
+
+public class Url {
+	
+	private Vector<String> nomFichiers;
+	private ProcessBarListener monListener;
+	
+	/**
+	 * Constructeur paramétré de Url (classe modele)<BR>
+	 * @param		pChemin			le nom du fichier à traiter
+	 * @param		listener		l'écouteur
+	 */
+	public Url(String pChemin, ProcessBarListener listener) {
+		this.monListener= listener;
+		this.nomFichiers = new Vector<String>();
+		
+		// Si le pChemin est un répertoire :
+		if (isDirectory(pChemin)) {
+			this.nomFichiers.addAll(FilesFinder.findFiles(pChemin));
+		}else {
+			this.nomFichiers.add(pChemin); 
+		}
+		
+	}
+	
+	
+	/**
+	 * Cette fonction permet de verifier si le chemin passé en paramètre est un répertoire<BR>
+	 * @param		pChemin		le chemin
+	 * @return		retourne vrai si pChemin est un répertoire, sinon faux
+	 */
+	private boolean isDirectory(String pChemin) {
+		File directory = new File(pChemin);
+		
+		if(directory.isDirectory())
+			return true;
+		return false;
+	}
+	
+	/**
+	 * Cette fonction permet d'extraire le nom du fichier du chemin<BR>
+	 * @param		pChemin		le chemin
+	 * @return		retourne le nom du fichier (type compris)
+	 */
+	private String extractName(String pChemin) {
+		Scanner sc= new Scanner(pChemin);
+		sc.useDelimiter("\\\\");
+		String nomF=null;
+		
+		while (sc.hasNext()) {
+			nomF= sc.next();
+		}
+		
+		sc.close();
+		return nomF;
+	}
+	
+	/**
+	 * Permet de connaitre le type du fichier<BR>
+	 * @return		retourne sous forme d'une String "docx" si un fichier docx 
+	 * sinon "other" pour "txt" et "html"
+	 */
+	private String getType(int i) {
+		if (this.nomFichiers.elementAt(i).contains(".docx"))
+			return "docx";
+		return "other";
+	}
+	
+	
+	/**
+	 * Cette fonction permet de convertir une liste de liste en tableau de String à double entré<BR>
+	 * @return		retourne le nombre de colonne du model
+	 */
+	private String[][] convertList(ArrayList<ArrayList<String>> pListe) {
+		// On convertit la liste de listes en tableau à deux dimensions
+
+		// Nombre d'élements de pListe
+		int nbListe= pListe.size();
+		
+		// Declaration du tableau à deux dimensions.
+		String mesUrlDef[][]= new String[nbListe][2];
+		
+		int i=0;
+		
+		while (i < nbListe) {
+			mesUrlDef[i][0]= pListe.get(i).get(0);
+			mesUrlDef[i][1]= pListe.get(i).get(1);
+			i++;
+		}
+	
+		return mesUrlDef;
+	}
+	
+	
+	/**
+	 * Permet de savoir si un lien passé en paramètre est defectueux ou non<BR>
+	 * @param		pUrlString		le lien url
+	 * @return		retourne true si valide et false si invalide
+	 */
+	private boolean estDefectueux(String pUrlString) {
+		int result=this.getResponseCode(pUrlString);
+		if (result >= 400)
+			return true;
+		return false;
+	}
+	
+	
+	/**
+	 * Permet de retourner le code de vérification du lien, ce code permettra 
+	 * de dire si oui ou non le lien est valide<BR>
+	 * @param		pUrlString		le lien url
+	 * @return		retourne le code de vérification de l'url sous forme d'entier positif
+	 */
+	private int getResponseCode(String urlString) {
+		try {
+	    URL u = new URL(urlString);
+	    if (urlString.contains("https://")) {
+	    	HttpsURLConnection huc = (HttpsURLConnection) u.openConnection();
+	    	
+	    	huc.setRequestMethod("GET"); 
+	 	    huc.connect(); 
+	 	    return huc.getResponseCode();
+	    } else {
+	    	HttpURLConnection huc2 =  (HttpURLConnection)  u.openConnection();
+	    
+	    	huc2.setRequestMethod("GET"); 
+	    	huc2.connect(); 
+	    	return huc2.getResponseCode();
+	    }
+	    
+		} catch (IOException ignore){return 404;}
+	}
+	
+	
+	/**
+	 * Permet de retourner sous forme de vecteur la liste d'url defectueux<BR>
+	 * @return		retourne la liste des url defectueux sous forme de vecteur de String
+	 */
+	public String[][] mesUrlDef() {
+		
+		int nbF= this.nomFichiers.size();
+		int j=0;
+		String currentFile;
+		
+		// Envoie du nombre de fichier au SwingWorker
+		monListener.nbFiles(nbF);
+		
+		// Creation liste de listes (nom_du_fichier, urlDef)
+		ArrayList<ArrayList<String>> maListe= new ArrayList<ArrayList<String>>();
+		
+		// Tant que la fonction n'a pas traité tout les fichiers
+		while (j<nbF) {
+			
+			// On précise au SwingWorker le nombre de fichiers traités
+			monListener.nbFilesDone(j);
+		
+			currentFile= this.nomFichiers.elementAt(j);
+			Vector<String> vUrl=null;
+			
+			// On récupère la liste des url du fichier
+			if (getType(j) == "other") {
+				vUrl= (new UseOther(currentFile)).mesUrl();
+			}else 
+				vUrl= (new UseDocx(currentFile)).mesUrl();
+					
+			int i=0;
+			int nbEl= vUrl.size();
+			String monLien;
+			
+			// On précise le nombre d'itérations a réaliser pour traiter tout les liens
+			monListener.nbIterations(nbEl);
+			
+			while (i < nbEl){
+				// On crée une liste (nom du fichier courant + urlCourante) (équivalent à une ligne) :
+				ArrayList<String> ligne= new ArrayList<String>();
+				
+				monLien = vUrl.elementAt(i);
+				
+				// On précise le numéro du lien traité
+				monListener.taskProcessing(i);
+				
+				if (estDefectueux(monLien)) {
+					ligne.add(extractName(currentFile));
+					ligne.add(monLien);
+					
+					// on ajoute la ligne à la liste principale : 
+					maListe.add(ligne);
+				}
+				
+				i++;
+			}
+	
+			j++;
+		}
+		
+		// On retourne le tableau à deux dimensions
+		return convertList(maListe);
+	}
+
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="27" version="2.0">
 <workbenchAdvisor/>
 <window height="768" width="1024" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -31,25 +31,29 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseOther.java" partName="UseOther.java" path="C:/Users/Penchenat Matthieu/Documents/GitHub/CURLING/Developpement/URL/src/modele/UseOther.java" title="UseOther.java" tooltip="URL/src/modele/UseOther.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/URL/src/modele/UseOther.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="610" selectionTopPixel="323"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgAccueil.java" partName="DlgAccueil.java" path="C:/Users/Penchenat Matthieu/Documents/GitHub/CURLING/Developpement/URL/src/vue/DlgAccueil.java" title="DlgAccueil.java" tooltip="URL/src/vue/DlgAccueil.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/URL/src/vue/DlgAccueil.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="113" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgListe.java" partName="DlgListe.java" path="C:/Users/Penchenat Matthieu/Documents/GitHub/CURLING/Developpement/URL/src/vue/DlgListe.java" title="DlgListe.java" tooltip="URL/src/vue/DlgListe.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/URL/src/vue/DlgListe.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="69" selectionTopPixel="0"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="principal.java" partName="principal.java" path="C:/Users/Penchenat Matthieu/Documents/GitHub/CURLING/Developpement/URL/src/principal.java" title="principal.java" tooltip="URL/src/principal.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/URL/src/principal.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="178" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (1 item)"/>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors (17 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -265,25 +269,28 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/modele/UseOther.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/vue/DlgListe.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/controleur/monSwingWorker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/vue/DlgListe.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/vue/DlgAccueil.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/URL/src/principal.java"/>
 </editors>
-<item historyLabel="UseOther.java" index="0">
+<item historyLabel="DlgListe.java" index="0">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="UseOther.java" index="0">
-<position info="not_deleted" x="610" y="0"/>
+<item historyLabel="monSwingWorker.java" index="1">
+<position info="not_deleted" x="1923" y="0"/>
 </item>
-<item historyLabel="UseOther.java" index="0">
-<position/>
+<item historyLabel="DlgListe.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="UseOther.java" index="0">
-<position info="not_deleted" x="1238" y="0"/>
+<item historyLabel="DlgAccueil.java" index="3">
+<position info="not_deleted" x="113" y="0"/>
 </item>
-<item historyLabel="UseOther.java" index="0">
-<position info="not_deleted" x="610" y="0"/>
+<item historyLabel="DlgListe.java" index="2">
+<position info="not_deleted" x="69" y="0"/>
 </item>
-<item active="true" historyLabel="principal.java" index="1">
+<item active="true" historyLabel="principal.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -314,47 +321,47 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="principal.java" tooltip="URL/src/principal.java">
 <persistable path="/URL/src/principal.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseOther.java" tooltip="URL/src/modele/UseOther.java">
-<persistable path="/URL/src/modele/UseOther.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlListe.java" tooltip="URL/src/controleur/CtrlListe.java">
-<persistable path="/URL/src/controleur/CtrlListe.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgListe.java" tooltip="URL/src/vue/DlgListe.java">
 <persistable path="/URL/src/vue/DlgListe.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgAccueil.java" tooltip="URL/src/vue/DlgAccueil.java">
 <persistable path="/URL/src/vue/DlgAccueil.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VueTest.java" tooltip="URL/src/Test/VueTest.java">
-<persistable path="/URL/src/Test/VueTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testUrlValidity.java" tooltip="URL/src/Test/testUrlValidity.java">
-<persistable path="/URL/src/Test/testUrlValidity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseOtherTest.java" tooltip="URL/src/Test/UseOtherTest.java">
-<persistable path="/URL/src/Test/UseOtherTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Url.java" tooltip="URL/src/modele/Url.java">
-<persistable path="/URL/src/modele/Url.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseDocxTest.java" tooltip="URL/src/Test/UseDocxTest.java">
-<persistable path="/URL/src/Test/UseDocxTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="monSwingWorker.java" tooltip="URL/src/controleur/monSwingWorker.java">
+<persistable path="/URL/src/controleur/monSwingWorker.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UrlTest.java" tooltip="URL/src/Test/UrlTest.java">
 <persistable path="/URL/src/Test/UrlTest.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseTxtTest.java" tooltip="URL/src/Test/UseTxtTest.java">
-<persistable path="/URL/src/Test/UseTxtTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DlgTask.java" tooltip="URL/src/vue/DlgTask.java">
+<persistable path="/URL/src/vue/DlgTask.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ZipFileTest.java" tooltip="URL/src/Test/ZipFileTest.java">
-<persistable path="/URL/src/Test/ZipFileTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseOther.java" tooltip="URL/src/modele/UseOther.java">
+<persistable path="/URL/src/modele/UseOther.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testUrl.java" tooltip="URL/src/Test/testUrl.java">
-<persistable path="/URL/src/Test/testUrl.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UseDocx.java" tooltip="URL/src/modele/UseDocx.java">
+<persistable path="/URL/src/modele/UseDocx.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestRegex.java" tooltip="URL/src/Test/TestRegex.java">
-<persistable path="/URL/src/Test/TestRegex.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Url.java" tooltip="URL/src/modele/Url.java">
+<persistable path="/URL/src/modele/Url.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProcessBarListener.java" tooltip="URL/src/modele/ProcessBarListener.java">
+<persistable path="/URL/src/modele/ProcessBarListener.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyTableModel.java" tooltip="URL/src/modele/MyTableModel.java">
+<persistable path="/URL/src/modele/MyTableModel.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FilesFinder.java" tooltip="URL/src/modele/FilesFinder.java">
+<persistable path="/URL/src/modele/FilesFinder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlAccueil.java" tooltip="URL/src/controleur/CtrlAccueil.java">
+<persistable path="/URL/src/controleur/CtrlAccueil.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CtrlListe.java" tooltip="URL/src/controleur/CtrlListe.java">
+<persistable path="/URL/src/controleur/CtrlListe.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VueTest.java" tooltip="URL/src/Test/VueTest.java">
+<persistable path="/URL/src/Test/VueTest.java"/>
 </file>
 </mruList>
 </workbench>

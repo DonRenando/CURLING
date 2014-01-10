@@ -1,7 +1,6 @@
 package vue;
 
 import java.awt.GridLayout;
-
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,18 +12,34 @@ public class DlgTask extends JDialog {
 	private JProgressBar progressBar;
 	private JLabel percent, nbFiles;
 	
-	public JProgressBar getProcessBar(){
+	/**
+	 * Cette fonction permet de retourner le progressBar<BR>
+	 * @return		retourne le progress bar
+	 */
+	public JProgressBar getProcessBar() {
 		return this.progressBar;
 	}
 	
+	/**
+	 * Cette fonction permet de retourner le pourcentage (JLabel)<BR>
+	 * @return		retourne le pourcentage (JLabel)
+	 */
 	public JLabel getLabel(){
 		return this.percent;
 	}
 	
+	/**
+	 * Cette fonction permet de retourner le label avec préciser le nombre de fichier traité et à traiter<BR>
+	 * @return		retourne le JLabel correspondant
+	 */
 	public JLabel getNbFilesLabel(){
 		return this.nbFiles;
 	}
 	
+	/**
+	 * Constructeur paramétré de DlgTask, il initialise la vue DlgListe (passé en paramètre)<BR>
+	 * @param		pVue		DlgListe
+	 */
 	public DlgTask(DlgListe pVue) {
 		super(pVue, "Chargement");
 		
@@ -67,10 +82,5 @@ public class DlgTask extends JDialog {
 		this.setVisible(true);
 	}
 
-	public static void main(String[] args) {
-		
-		new DlgTask(null); 
-
-	}
 	
 }

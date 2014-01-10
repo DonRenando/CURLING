@@ -1,0 +1,13 @@
+package modele;
+
+/**
+ * Ceci est un interface, elle permet<BR>
+ */
+public interface ProcessBarListener {
+	
+	void nbIterations(int nbI);
+	void taskProcessing(int i);
+	void nbFiles(int nb);
+	void nbFilesDone(int nb);
+
+}

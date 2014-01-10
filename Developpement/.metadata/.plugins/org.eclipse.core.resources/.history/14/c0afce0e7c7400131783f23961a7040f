@@ -1,0 +1,59 @@
+package modele;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MyTableModel extends AbstractTableModel{
+	
+	private static final long serialVersionUID = 1L;
+	private String donnees[][];
+	private String titres[];
+	
+	public MyTableModel(String donnees[][], String titres[]) { 
+	      this.setDonnees(donnees); 
+	      this.setTitres(titres); 
+	   } 
+
+	public int getColumnCount() {
+		return titres.length;
+	}
+
+	public int getRowCount() {
+		return donnees.length; 
+	}
+
+	public Object getValueAt(int parm1, int parm2) { 
+	    return donnees[parm1][parm2]; 
+	}
+
+	public String getColumnName(int col) {
+        return titres[col];
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String[][] getDonnees() {
+		return donnees;
+	}
+
+	public void setDonnees(String donnees[][]) {
+		this.donnees = donnees;
+	}
+
+	public String[] getTitres() {
+		return titres;
+	}
+
+	public void setTitres(String titres[]) {
+		this.titres = titres;
+	}
+
+}

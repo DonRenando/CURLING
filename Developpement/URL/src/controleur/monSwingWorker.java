@@ -4,7 +4,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.concurrent.ExecutionException;
 import javax.swing.SwingWorker;
-
 import modele.MyTableModel;
 import modele.ProcessBarListener;
 import vue.DlgListe;
@@ -16,10 +15,18 @@ public class monSwingWorker extends SwingWorker<String[][], String> implements P
 	private int nbIterations, nbFiles, nbFilesDone;
 	private DlgTask process;
 	
-	public ProcessBarListener getListener(){
+	/**
+	 * Permet de retourner le listener de la classe<BR>
+	 * @return		retourne le listener de la classe (ProcessBarListener)
+	 */
+	public ProcessBarListener getListener() {
 		return this;
 	}
 	
+	/**
+	 * Constructeur paramétré de CtrlListe, il initialise la vue, demarre le SwingWorker<BR>
+	 * @param		pVue		la vue DlgListe
+	 */
 	public monSwingWorker(DlgListe pVue){
 		this.maVue=pVue;
 		this.process = new DlgTask(this.maVue);
@@ -36,10 +43,18 @@ public class monSwingWorker extends SwingWorker<String[][], String> implements P
 		});
 	}
 
+	
+	/**
+	 * Execute une tache longue en arrière plan dans un Thread<BR>
+	 * @return		retourne String[][] (nomFichier, et url defectueuse)
+	 */
 	protected String[][] doInBackground() throws Exception {
 		return maVue.listUrlDef(this.getListener());		
 	}
 
+	/**
+	 * cette fontion s'exécute lorsque la fonction doInBackground aura terminé, elle met a jour DlgListe<BR>
+	 */
 	protected void done(){
 		try {
 			
@@ -60,19 +75,35 @@ public class monSwingWorker extends SwingWorker<String[][], String> implements P
 		}
 	}
 
+	/**
+	 * Cette fonction préciser à la classe le nombre de liens à traiter<BR>
+	 * @param		nbI		Nombre de lien à traiter dans un fichier
+	 */
 	public void nbIterations(int nbI){
 		this.nbIterations=nbI;
 	}
 	
+	/**
+	 * Cette fonction permet de valider l'avancement en pourcentage du traitement de fichier en cours de traitement<BR>
+	 * @param		i	le 'i'ème lien traité
+	 */
 	public void taskProcessing(int i) {
         // Calcul de l'avancement en %
         this.setProgress(((i + 1) * 100) / this.nbIterations);
 	}
 
+	/**
+	 * Cette fonction permet de fournir à l'objet MonSwingWorker le nombre de fichier a traiter<BR>
+	 * @param		nb		le nombre de fichier à traiter
+	 */
 	public void nbFiles(int nb) {
 		this.nbFiles= nb;
 	}
 
+	/**
+	 * Cette fonction permet de fournir à l'objet MonSwingWorker le nombre de fichier qui ont été traité<BR>
+	 * @param		nb		le nombre de fichier qui ont été traité
+	 */
 	public void nbFilesDone(int nb) {
 		this.nbFilesDone = nb;		
 	}

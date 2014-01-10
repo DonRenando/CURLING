@@ -8,52 +8,49 @@ public class MyTableModel extends AbstractTableModel{
 	private String donnees[][];
 	private String titres[];
 	
-	public MyTableModel(String donnees[][], String titres[]) { 
-	      this.setDonnees(donnees); 
-	      this.setTitres(titres); 
+	/**
+	 * Constructeur paramétré de MyTableModel, il initialise le tableau de donnée et le tableau titre<BR>
+	 * @param		pVue		la vue DlgListe
+	 */
+	public MyTableModel(String pDonnees[][], String pTitres[]) { 
+	      this.donnees= pDonnees; 
+	      this.titres= pTitres; 
 	   } 
 
+	/**
+	 * Cette fonction permet de retourner le nombre de colonne du model<BR>
+	 * @return		retourne le nombre de colonne du model
+	 */
 	public int getColumnCount() {
 		return titres.length;
 	}
 
+	/**
+	 * Cette fonction permet de retourner le nombre de ligne du model<BR>
+	 * @return		retourne le nombre de ligne du model
+	 */
 	public int getRowCount() {
 		return donnees.length; 
 	}
 
+	/**
+	 * Cette fonction permet de retourner la valeur a une coordonnée donné du model<BR>
+	 * @param		parm1		coordonnée_x
+	 * @param		parm2		coordonnée_y
+	 * @return		retourne la valeur de l'élément de coordonnée (x,y)
+	 */
 	public Object getValueAt(int parm1, int parm2) { 
 	    return donnees[parm1][parm2]; 
 	}
 
+	/**
+	 * Cette fonction permet de retourner le nom de la colonne numéro (col passé en paramètre) du model<BR>
+	 * @param		col		Le numéro de la colonne
+	 * @return		retourne le nom de la colonne du model
+	 */
 	public String getColumnName(int col) {
         return titres[col];
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public String[][] getDonnees() {
-		return donnees;
-	}
 
-	public void setDonnees(String donnees[][]) {
-		this.donnees = donnees;
-	}
-
-	public String[] getTitres() {
-		return titres;
-	}
-
-	public void setTitres(String titres[]) {
-		this.titres = titres;
-	}
 
 }

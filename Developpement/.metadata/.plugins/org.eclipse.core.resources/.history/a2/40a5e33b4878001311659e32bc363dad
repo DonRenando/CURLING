@@ -1,0 +1,92 @@
+package controleur;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.concurrent.ExecutionException;
+import javax.swing.SwingWorker;
+import modele.MyTableModel;
+import modele.ProcessBarListener;
+import vue.DlgListe;
+import vue.DlgTask;
+
+public class monSwingWorker extends SwingWorker<String[][], String> implements ProcessBarListener{
+	
+	private DlgListe maVue;
+	private int nbIterations, nbFiles, nbFilesDone;
+	private DlgTask process;
+	
+	/**
+	 * Permet de retourner le listener de la classe<BR>
+	 * @return		retourne le listener de la classe (ProcessBarListener)
+	 */
+	public ProcessBarListener getListener() {
+		return this;
+	}
+	
+	/**
+	 * Constructeur paramétré de CtrlListe, il initialise la vue, demarre le SwingWorker<BR>
+	 * @param		pVue		la vue DlgListe
+	 */
+	public monSwingWorker(DlgListe pVue){
+		this.maVue=pVue;
+		this.process = new DlgTask(this.maVue);
+		
+		addPropertyChangeListener(new PropertyChangeListener() {
+			 
+			public void propertyChange(PropertyChangeEvent evt) {
+				if ("progress".equals(evt.getPropertyName())) {
+					process.getProcessBar().setValue((Integer) evt.getNewValue());
+					process.getLabel().setText(" Fichier en cours: "+ (Integer) evt.getNewValue() +" %");
+					process.getNbFilesLabel().setText("Fichiers traités: "+ nbFilesDone +" / " + nbFiles +"  ");
+				}
+			}
+		});
+	}
+
+	
+	/**
+	 * Permet de retourner le listener de la classe<BR>
+	 * @return		retourne le listener de la classe (ProcessBarListener)
+	 */
+	protected String[][] doInBackground() throws Exception {
+		return maVue.listUrlDef(this.getListener());		
+	}
+
+	protected void done(){
+		try {
+			
+			// Nom des colonnes de la JTable
+			String nom[]= { "Nom du fichier", "Url" };
+			
+			// On crée un TableModel
+			MyTableModel newTable= new MyTableModel(get(), nom);
+			
+			// On met à jour la JTable
+			maVue.getTable().setModel(newTable);
+
+			// Lorsque la tache est terminé on ferme la fenêtre de chargement
+			process.setVisible(false);
+			
+		} catch (InterruptedException | ExecutionException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void nbIterations(int nbI){
+		this.nbIterations=nbI;
+	}
+	
+	public void taskProcessing(int i) {
+        // Calcul de l'avancement en %
+        this.setProgress(((i + 1) * 100) / this.nbIterations);
+	}
+
+	public void nbFiles(int nb) {
+		this.nbFiles= nb;
+	}
+
+	public void nbFilesDone(int nb) {
+		this.nbFilesDone = nb;		
+	}
+
+}

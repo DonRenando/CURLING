@@ -17,7 +17,8 @@ public class Url {
 	
 	/**
 	 * Constructeur paramétré de Url (classe modele)<BR>
-	 * @param		pNomFichier		le nom du fichier à traiter
+	 * @param		pChemin			le nom du fichier à traiter
+	 * @param		listener		l'écouteur
 	 */
 	public Url(String pChemin, ProcessBarListener listener) {
 		this.monListener= listener;
@@ -33,7 +34,12 @@ public class Url {
 	}
 	
 	
-	public boolean isDirectory(String pChemin) {
+	/**
+	 * Cette fonction permet de verifier si le chemin passé en paramètre est un répertoire<BR>
+	 * @param		pChemin		le chemin
+	 * @return		retourne vrai si pChemin est un répertoire, sinon faux
+	 */
+	private boolean isDirectory(String pChemin) {
 		File directory = new File(pChemin);
 		
 		if(directory.isDirectory())
@@ -41,7 +47,12 @@ public class Url {
 		return false;
 	}
 	
-	public String extractName(String pChemin) {
+	/**
+	 * Cette fonction permet d'extraire le nom du fichier du chemin<BR>
+	 * @param		pChemin		le chemin
+	 * @return		retourne le nom du fichier (type compris)
+	 */
+	private String extractName(String pChemin) {
 		Scanner sc= new Scanner(pChemin);
 		sc.useDelimiter("\\\\");
 		String nomF=null;
@@ -55,7 +66,7 @@ public class Url {
 	}
 	
 	/**
-	 * Permet de connaitre le type du fichier défini dans ce controleur<BR>
+	 * Permet de connaitre le type du fichier<BR>
 	 * @return		retourne sous forme d'une String "docx" si un fichier docx 
 	 * sinon "other" pour "txt" et "html"
 	 */
@@ -65,7 +76,13 @@ public class Url {
 		return "other";
 	}
 	
-	private String[][] convertList(ArrayList<ArrayList<String>> pListe){
+	
+	/**
+	 * Cette fonction permet de convertir une liste de liste en tableau de String à double entrée<BR>
+	 * @param		pListe		Une liste de liste 
+	 * @return		retourne un String[][] (tableau à deux entrée de String
+	 */
+	private String[][] convertList(ArrayList<ArrayList<String>> pListe) {
 		// On convertit la liste de listes en tableau à deux dimensions
 
 		// Nombre d'élements de pListe
@@ -127,10 +144,10 @@ public class Url {
 	
 	
 	/**
-	 * Permet de retourner sous forme de vecteur la liste d'url defectueux<BR>
-	 * @return		retourne la liste des url defectueux sous forme de vecteur de String
+	 * Permet de retourner la liste des Url defectueux<BR>
+	 * @return		retourne la liste des url defectueux sous forme de tableau à deux entrées de String
 	 */
-	public String[][] mesUrlDef(){
+	public String[][] mesUrlDef() {
 		
 		int nbF= this.nomFichiers.size();
 		int j=0;

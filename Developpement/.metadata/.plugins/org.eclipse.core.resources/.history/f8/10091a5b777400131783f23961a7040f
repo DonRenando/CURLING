@@ -1,0 +1,91 @@
+package vue;
+
+import controleur.*;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+import modele.ProcessBarListener;
+
+
+
+public class DlgListe extends JFrame{
+	
+	private static final long serialVersionUID = 1L;
+	private CtrlListe monCtrl=null;
+	
+	
+	private JScrollPane scrollPane;
+	private JTable table;
+	private JButton button1;
+		
+	public DlgListe(CtrlListe pMonCtrl){
+		super("Liste des Url defectueuses");
+		this.monCtrl=pMonCtrl;
+		initComponents();
+		
+		monSwingWorker swingWorker = new monSwingWorker(this);
+		swingWorker.execute();
+	}
+	
+	public CtrlListe getCtrl(){
+		return this.monCtrl;
+	}
+	
+	public JTable getTable() {
+		return this.table;
+	}
+	
+	private void initComponents() {
+		scrollPane = new JScrollPane();
+		button1 = new JButton();
+		
+		this.setBounds(300, 250, 320, 280);
+		this.setResizable(true);
+		this.setVisible(true);
+
+		// JTable
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setFillsViewportHeight(true);
+
+		//---- button1 ----
+		button1.setText("Ok");
+		button1.addActionListener(new ok());
+		
+		// Déclaration JPanel : 
+		JPanel top= new JPanel();
+		top.setLayout(new GridLayout(2,1));
+	
+		top.add(scrollPane);
+		top.add(button1);
+		this.add(top);
+		
+		
+	}
+	
+	class ok implements ActionListener {		
+
+		public void actionPerformed(ActionEvent arg0) {
+			setVisible(false);
+		}
+	}
+
+	/**
+	 * Permet de retourner la liste des url defectueuses en faisant appel à une méthode de son controleur<BR>
+	 * @return		retourne un Vector<String> contenant toute les url defectueuses.
+	 */
+	public String[][] listUrlDef(ProcessBarListener listener){
+		return monCtrl.getListUrlDef(listener);
+	}
+
+	
+	//public static void main(String[] args) {
+	//	new DlgListe(null);
+	//}
+
+
+}

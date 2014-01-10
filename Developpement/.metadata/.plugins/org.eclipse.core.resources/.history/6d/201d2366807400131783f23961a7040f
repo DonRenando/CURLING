@@ -1,0 +1,71 @@
+package vue;
+
+import java.awt.GridLayout;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+
+public class DlgTask extends JDialog {
+
+	private static final long serialVersionUID = 1L;
+	private JProgressBar progressBar;
+	private JLabel percent, nbFiles;
+	
+	public JProgressBar getProcessBar(){
+		return this.progressBar;
+	}
+	
+	public JLabel getLabel(){
+		return this.percent;
+	}
+	
+	public JLabel getNbFilesLabel(){
+		return this.nbFiles;
+	}
+	
+	public DlgTask(DlgListe pVue) {
+		super(pVue, "Chargement");
+		
+		// Définir la fenêtre elle-même		
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		
+		// Déclaration JPanel : 
+		JPanel top= new JPanel();
+		top.setLayout(new GridLayout(3,1));
+		
+		// TextField en cours:
+		nbFiles = new JLabel("Fichiers traités: 0 / 1  ");
+		nbFiles.setHorizontalAlignment(JLabel.RIGHT);
+		nbFiles.setVerticalAlignment(JLabel.CENTER);
+		
+		
+		// TextField en cours:
+		percent = new JLabel(" Fichier en cours: 0 %");
+		percent.setHorizontalAlignment(JLabel.LEFT);
+		percent.setVerticalAlignment(JLabel.CENTER);
+		
+		// ProcessBar :
+	    progressBar = new JProgressBar(0, 100);
+	    progressBar.setValue(0);
+	    add(progressBar);
+	    
+	    // Ajout dans le JPanel :
+	    top.add(nbFiles);
+	    top.add(percent);
+	    top.add(progressBar);
+	    
+	    // Ajout du JPanel dans la fenêtre :
+	    this.add(top);
+	    
+	    // Ajustement taille fenêtre :
+		this.setBounds(310, 360, 300, 80);
+		
+		// Afficher la fenêtre : 
+		this.setVisible(true);
+	}
+
+	
+}

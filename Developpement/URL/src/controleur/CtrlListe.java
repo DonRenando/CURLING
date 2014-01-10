@@ -9,10 +9,10 @@ public class CtrlListe {
 	
 	/**
 	 * Constructeur paramétré de CtrlListe, il initialise nomFichier à la valeur de pNomFichier<BR>
-	 * @param		pNomFichier		le nom du fichier
+	 * @param		pChemin		le chemin du fichier ou répertoire
 	 */
-	public CtrlListe(String pNomFichier){
-		this.nomFichier=pNomFichier;
+	public CtrlListe(String pChemin){
+		this.nomFichier=pChemin;
 	}
 	
 	/**
@@ -33,7 +33,8 @@ public class CtrlListe {
 	
 	/**
 	 * Permet de retourner la liste des Url Defectueuses d'un fichier (passé en param dans le controleur)<BR>
-	 * @return		retourne Vector<String> la liste des Url defectueuses
+	 * @param		monListener		Le listener qui permet d'informer DlgTask pour l'avancement.
+	 * @return		retourne String[][] tableau à deux entrées de chaine contenant le nom du fichier et les url defectueuses
 	 */
 	public String[][] getListUrlDef(ProcessBarListener monListener) {	
 		// Creation de la classe modèle Url:

@@ -2,7 +2,7 @@ package vue;
 
 import controleur.*;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +21,7 @@ public class DlgListe extends JFrame{
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JButton button1;
+	private JLabel label1;
 		
 	public DlgListe(CtrlListe pMonCtrl){
 		super("Liste des Url defectueuses");
@@ -43,7 +44,7 @@ public class DlgListe extends JFrame{
 		scrollPane = new JScrollPane();
 		button1 = new JButton();
 		
-		this.setBounds(300, 250, 320, 280);
+		this.setBounds(300, 350, 500, 280);
 		this.setResizable(true);
 		this.setVisible(true);
 
@@ -51,20 +52,30 @@ public class DlgListe extends JFrame{
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		table.setFillsViewportHeight(true);
-
+		
+		label1 = new JLabel();
+		label1.setText("<html>Liste des<font color = #FF0000> Url defectueuses</font>: </html>");
+		//label1.setBounds(25, 10, 100, 25);
+		add(label1);
 		//---- button1 ----
-		button1.setText("Ok");
-		button1.addActionListener(new ok());
+
+		
 		
 		// Déclaration JPanel : 
 		JPanel top= new JPanel();
-		top.setLayout(new GridLayout(2,1));
-	
+	//	top.setLayout(new GridLayout(2,1));
+		this.add(top,BorderLayout.SOUTH);
+		add(top);
 		top.add(scrollPane);
-		top.add(button1);
+		this.add(button1);
 		this.add(top);
 		
+		button1.setText("Ok");
+		button1.addActionListener(new ok());
+	//	button1.setBounds(170, 170, 100, 25);
+		this.add(button1,BorderLayout.SOUTH);
 		
+		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 	}
 	
 	class ok implements ActionListener {		

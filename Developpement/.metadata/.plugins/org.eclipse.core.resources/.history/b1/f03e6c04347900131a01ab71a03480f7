@@ -1,0 +1,41 @@
+package modele;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MyTableModel extends AbstractTableModel{
+	
+	private static final long serialVersionUID = 1L;
+	private String donnees[][];
+	private String titres[];
+	
+	/**
+	 * Constructeur paramétré de MyTableModel, il initialise le tableau de donnée et le tableau titre<BR>
+	 * @param		pVue		la vue DlgListe
+	 */
+	public MyTableModel(String pDonnees[][], String pTitres[]) { 
+	      this.donnees= pDonnees; 
+	      this.titres= pTitres; 
+	   } 
+
+	/**
+	 * Cette fonction permet de retourner le nombre de colonne du model<BR>
+	 * @return		retourne String[][] (nomFichier, et url defectueuse)
+	 */
+	public int getColumnCount() {
+		return titres.length;
+	}
+
+	public int getRowCount() {
+		return donnees.length; 
+	}
+
+	public Object getValueAt(int parm1, int parm2) { 
+	    return donnees[parm1][parm2]; 
+	}
+
+	public String getColumnName(int col) {
+        return titres[col];
+    }
+
+
+}

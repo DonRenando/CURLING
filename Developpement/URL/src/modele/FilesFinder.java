@@ -5,6 +5,11 @@ import java.util.Vector;
 
 public class FilesFinder {
 	
+	/**
+	 * Cette fonction permet de retourner sous Forme de Vector<String> la liste des fichiers (de type valide (html, docx, txt)) trouvé dans le répertoire passé en paramètre<BR>
+	 * @param		pDirectoryPath		le chemin du répertoire
+	 * @return		retourne un Vector<String> la liste des fichiers présent dans le repertoire
+	 */
 	public static Vector<String> findFiles(String pDirectoryPath) {
 		Vector<String> vFileName= new Vector<String>();
 		File directory = new File(pDirectoryPath);
@@ -22,17 +27,23 @@ public class FilesFinder {
 		}
 	}
 	
+	
+	/**
+	 * Cette fonction permet de vérifier si le nom du fichier passé en paramètre est de type valide (html, txt, docx)<BR>
+	 * @param		pFile		le nom du fichier à traiter
+	 */
 	private static boolean testFileType(String pFile) {
 		if ((pFile.toUpperCase()).endsWith(".TXT") || (pFile.toUpperCase()).endsWith(".HTML") || (pFile.toUpperCase()).endsWith(".DOCX"))
 			return true;
 		return false;
 	}
 
-	
+	// Ceci est un test de la classe FilesFinder
 	public static void main(String[] args) {
 		Vector<String> cheminF;
-		FilesFinder.findFiles("C:/temp");
-		cheminF = FilesFinder.findFiles("C:/Users/Malibu/Documents/DOC/AUTRE/BLAGUES");
+		
+		// Vous pouvez modifier le chemin du répertoire pour tester
+		cheminF = FilesFinder.findFiles("C:/Users/Malibu/Documents/DOC/");
 		
 		int i=0;
 		int nbEl = cheminF.size();

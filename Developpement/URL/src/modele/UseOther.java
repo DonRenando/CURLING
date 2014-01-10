@@ -8,7 +8,6 @@ import java.util.Vector;
 public class UseOther {
 	
 	private String nomFichier;
-	private Scanner sc;
 	
 	/**
 	 * Constructeur paramétré de UseOther (classe modele)<BR>
@@ -38,7 +37,7 @@ public class UseOther {
 			//Toutes les lignes et enregisté dans le scanner
 			String l =scanner.next();
 					          
-			sc = new Scanner(l);
+			Scanner sc = new Scanner(l);
 			String l2 =  sc.findInLine(regex);
 					       
 			if (l2 != null) {
@@ -48,6 +47,4 @@ public class UseOther {
 		
 		return Urls;
 	}
-	
-
 }
