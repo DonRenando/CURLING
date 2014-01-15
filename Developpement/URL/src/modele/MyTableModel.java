@@ -10,7 +10,8 @@ public class MyTableModel extends AbstractTableModel{
 	
 	/**
 	 * Constructeur paramétré de MyTableModel, il initialise le tableau de donnée et le tableau titre<BR>
-	 * @param		pVue		la vue DlgListe
+	 * @param		pDonnees		le tableau de données
+	 * @param		pTitres		le nom de chaque colonne
 	 */
 	public MyTableModel(String pDonnees[][], String pTitres[]) { 
 	      this.donnees= pDonnees; 

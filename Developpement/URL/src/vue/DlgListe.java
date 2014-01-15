@@ -5,9 +5,7 @@ import controleur.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
 import modele.ProcessBarListener;
 
 
@@ -42,16 +40,25 @@ public class DlgListe extends JFrame{
 	
 	private void initComponents() {
 		scrollPane = new JScrollPane();
+		
 		button1 = new JButton();
 		
-		this.setBounds(300, 350, 500, 280);
+		this.setBounds(100, 200, 500, 500);
 		this.setResizable(true);
 		this.setVisible(true);
 
 		// JTable
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		//table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+		
 		table.setFillsViewportHeight(true);
+		//table.setAutoCreateColumnsFromModel (false);
+		//Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		
+	
 		
 		label1 = new JLabel();
 		label1.setText("<html>Liste des<font color = #FF0000> Url defectueuses</font>: </html>");
@@ -75,7 +82,7 @@ public class DlgListe extends JFrame{
 	//	button1.setBounds(170, 170, 100, 25);
 		this.add(button1,BorderLayout.SOUTH);
 		
-		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
+		//getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 	}
 	
 	class ok implements ActionListener {		
@@ -92,11 +99,5 @@ public class DlgListe extends JFrame{
 	public String[][] listUrlDef(ProcessBarListener listener){
 		return monCtrl.getListUrlDef(listener);
 	}
-
-	
-	//public static void main(String[] args) {
-	//	new DlgListe(null);
-	//}
-
 
 }

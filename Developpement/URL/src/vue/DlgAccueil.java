@@ -14,12 +14,9 @@ import javax.swing.event.DocumentListener;
 
 public class DlgAccueil extends JFrame implements DocumentListener, ActionListener
 {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
-	private JButton Parcourir, Valider, Liste;
+	private JButton Parcourir, Valider, Liste, historique;
 	private JTextField url; 
 	private String nomfichier;
 	private JLabel label1, label2;
@@ -44,6 +41,11 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		Parcourir = new JButton("Parcourir");
 		Parcourir.setBounds(355, 50, 100, 25);
 		add(Parcourir);
+		
+		historique = new JButton("historique");
+		historique.setBounds(150, 100, 100, 25);
+		add(historique);
+
 
 		
 		Valider = new JButton("Valider");
@@ -64,8 +66,13 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 		url.getDocument().addDocumentListener(this);
 		
 		Parcourir.addActionListener(this);
+		
+		
+		
 		Liste.addActionListener(this);
 		Valider.addActionListener(new Valider());
+		
+		historique.addActionListener(new Historique());
 	
 
 
@@ -91,7 +98,6 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 	        
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
-		 // this.pack();
 		  
 }
 		//-------------------------------------------------------------------------------
@@ -111,6 +117,8 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 				valider(pNomFichier);
 			}
 		}
+		
+		
 		
 			
 			class choix extends JFrame {
@@ -162,6 +170,16 @@ public class DlgAccueil extends JFrame implements DocumentListener, ActionListen
 			public void valider(String pNomFichier){
 				this.monCtrl.afficherListe(pNomFichier);
 			}
+
+			
+			class Historique implements ActionListener {		
+				public void actionPerformed(ActionEvent arg0) {
+					
+					CtrlHistory aurore= new CtrlHistory();
+					aurore.newDlgHistory();
+				}
+			}
+			
 }
 
 

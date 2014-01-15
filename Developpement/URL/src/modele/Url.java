@@ -119,7 +119,7 @@ public class Url {
 	/**
 	 * Permet de retourner le code de vérification du lien, ce code permettra 
 	 * de dire si oui ou non le lien est valide<BR>
-	 * @param		pUrlString		le lien url
+	 * @param		urlString		le lien url
 	 * @return		retourne le code de vérification de l'url sous forme d'entier positif
 	 */
 	private int getResponseCode(String urlString) {
@@ -153,6 +153,9 @@ public class Url {
 		int j=0;
 		String currentFile;
 		
+		// Creation du répertoire History s'il n'existe pas déjà
+		History.createDespositHistory();
+		
 		// Envoie du nombre de fichier au SwingWorker
 		monListener.nbFiles(nbF);
 		
@@ -166,6 +169,10 @@ public class Url {
 			monListener.nbFilesDone(j);
 		
 			currentFile= this.nomFichiers.elementAt(j);
+			
+			// Creer l'historique pour le fichier donné : 
+			History.createHistoryFile(this.extractName(currentFile), currentFile);
+			
 			Vector<String> vUrl=null;
 			
 			// On récupère la liste des url du fichier
@@ -173,7 +180,7 @@ public class Url {
 				vUrl= (new UseOther(currentFile)).mesUrl();
 			}else 
 				vUrl= (new UseDocx(currentFile)).mesUrl();
-					
+			
 			int i=0;
 			int nbEl= vUrl.size();
 			String monLien;
